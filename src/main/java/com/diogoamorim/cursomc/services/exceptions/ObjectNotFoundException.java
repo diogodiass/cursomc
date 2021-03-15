@@ -1,4 +1,4 @@
-package com.diogoamorim.cursomc.exception;
+package com.diogoamorim.cursomc.services.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException {
 

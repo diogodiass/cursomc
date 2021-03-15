@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.diogoamorim.cursomc.domain.Categoria;
 import com.diogoamorim.cursomc.domain.Cliente;
-import com.diogoamorim.cursomc.exception.ObjectNotFoundException;
 import com.diogoamorim.cursomc.repositories.ClienteRepository;
+import com.diogoamorim.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class ClienteService {
