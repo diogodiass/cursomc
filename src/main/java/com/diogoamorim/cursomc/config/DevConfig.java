@@ -14,7 +14,6 @@ import com.diogoamorim.cursomc.services.SmtpEmailService;
 
 @Configuration
 @Profile("dev")
-
 public class DevConfig {
 
 	@Autowired
@@ -38,4 +37,6 @@ public class DevConfig {
 	public EmailService emailService() {
 		return new SmtpEmailService();
 	}
+	
+	
 }
