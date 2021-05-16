@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 
+import com.diogoamorim.cursomc.domain.Cliente;
 import com.diogoamorim.cursomc.domain.Pedido;
 
 public class MockEmailService extends AbstractEmailService {
@@ -32,6 +33,13 @@ public class MockEmailService extends AbstractEmailService {
 		LOG.info(msg.toString());
 		LOG.info("Email enviado");
 		
+	}
+
+	@Override
+	public void sendNewPassword(Cliente cliente, String newPass) {
+		LOG.info("Simulando reset da senha");
+		LOG.info("Senha Resetada: " + newPass);
+		LOG.info("Email enviado");		
 	}
 
 }
