@@ -23,8 +23,6 @@ import com.diogoamorim.cursomc.security.JWTAuthenticationFilter;
 import com.diogoamorim.cursomc.security.JWTAuthorizationFilter;
 import com.diogoamorim.cursomc.security.JWTUtil;
 
-import io.netty.handler.codec.http.cors.CorsConfig;
-
 
 @Configuration
 @EnableWebSecurity
