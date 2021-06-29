@@ -23,6 +23,8 @@ import com.diogoamorim.cursomc.security.JWTAuthenticationFilter;
 import com.diogoamorim.cursomc.security.JWTAuthorizationFilter;
 import com.diogoamorim.cursomc.security.JWTUtil;
 
+import io.netty.handler.codec.http.cors.CorsConfig;
+
 
 @Configuration
 @EnableWebSecurity
@@ -78,15 +80,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
+		configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+		source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
-	
+
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-
 
 }
